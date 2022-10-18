@@ -1,14 +1,19 @@
-<div class="row">
+<div class="row" *ngIf="selectedRecipe.imagePath != ''">
   <div class="col-xs-12">
-    <img src="" alt="" class="img-responsive" />
+    <img
+      [src]="selectedRecipe.imagePath"
+      style="max-width: 20rem"
+      alt=""
+      class="img-responsive"
+    />
   </div>
 </div>
-<div class="row">
+<div class="row" *ngIf="selectedRecipe.name != ''">
   <div class="col-xs-12">
-    <h1>Recipe Name</h1>
+    <h1>{{ selectedRecipe.name }}</h1>
   </div>
 </div>
-<div class="row">
+<div class="row" *ngIf="selectedRecipe.name != ''">
   <div class="col-xs-12">
     <div class="btn-group">
       <button type="button" class="btn btn-primary dropdown-toggle">
@@ -22,9 +27,12 @@
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="col-xs-12">Description</div>
+<div class="row" *ngIf="selectedRecipe.description != ''">
+  <div class="col-xs-12">{{ selectedRecipe.description }}</div>
 </div>
-<div class="row">
+<div class="row" *ngIf="selectedRecipe.name != ''">
   <div class="col-xs-12">Incredients</div>
+</div>
+<div>
+  <p>Please select a recipe, to know more about it.</p>
 </div>
